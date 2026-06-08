@@ -13,6 +13,6 @@ public class ActivityParticipant {
     private Long id;
     private Long activityId;
     private Long residentId;
-    private Integer canParticipate;
+    private Boolean canParticipate;
     private LocalDateTime createTime;
 }

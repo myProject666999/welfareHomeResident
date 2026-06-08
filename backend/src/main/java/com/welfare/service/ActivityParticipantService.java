@@ -26,10 +26,10 @@ public class ActivityParticipantService extends ServiceImpl<ActivityParticipantM
             participant = new ActivityParticipant();
             participant.setActivityId(activityId);
             participant.setResidentId(residentId);
-            participant.setCanParticipate(canParticipate ? 1 : 0);
+            participant.setCanParticipate(canParticipate);
             return save(participant);
         } else {
-            participant.setCanParticipate(canParticipate ? 1 : 0);
+            participant.setCanParticipate(canParticipate);
             return updateById(participant);
         }
     }

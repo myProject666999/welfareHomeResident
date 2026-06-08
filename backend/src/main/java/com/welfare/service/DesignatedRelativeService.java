@@ -14,7 +14,7 @@ public class DesignatedRelativeService extends ServiceImpl<DesignatedRelativeMap
     public List<DesignatedRelative> listByResidentId(Long residentId) {
         LambdaQueryWrapper<DesignatedRelative> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(DesignatedRelative::getResidentId, residentId);
-        wrapper.eq(DesignatedRelative::getIsAuthorized, 1);
+        wrapper.eq(DesignatedRelative::getIsAuthorized, true);
         return list(wrapper);
     }
 
@@ -22,7 +22,7 @@ public class DesignatedRelativeService extends ServiceImpl<DesignatedRelativeMap
         LambdaQueryWrapper<DesignatedRelative> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(DesignatedRelative::getResidentId, residentId);
         wrapper.eq(DesignatedRelative::getIdCard, idCard);
-        wrapper.eq(DesignatedRelative::getIsAuthorized, 1);
+        wrapper.eq(DesignatedRelative::getIsAuthorized, true);
         return getOne(wrapper) != null;
     }
 }

@@ -17,7 +17,7 @@ public class DesignatedRelative {
     private String relation;
     private String phone;
     private String idCard;
-    private Integer isAuthorized;
+    private Boolean isAuthorized;
     private LocalDateTime createTime;
     @TableLogic
     private Integer isDeleted;

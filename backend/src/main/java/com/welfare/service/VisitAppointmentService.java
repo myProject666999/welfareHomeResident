@@ -32,7 +32,7 @@ public class VisitAppointmentService extends ServiceImpl<VisitAppointmentMapper,
 
     public boolean createAppointment(VisitAppointment appointment) {
         DesignatedRelative relative = relativeService.getById(appointment.getRelativeId());
-        if (relative == null || relative.getIsAuthorized() != 1) {
+        if (relative == null || !Boolean.TRUE.equals(relative.getIsAuthorized())) {
             throw new RuntimeException("该亲属未被授权探访");
         }
         if (!relative.getResidentId().equals(appointment.getResidentId())) {
